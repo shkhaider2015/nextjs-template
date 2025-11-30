@@ -21,9 +21,12 @@ import { RoleEnum } from "@/services/api/types/role";
 import Divider from "@mui/material/Divider";
 import ThemeSwitchButton from "@/components/switch-theme-button";
 import { IS_SIGN_UP_ENABLED } from "@/services/auth/config";
+import { usePathname } from "next/navigation";
 
 function ResponsiveAppBar() {
   const { t } = useTranslation("common");
+  const pathname = usePathname();
+  const isAdminRoute = pathname?.includes("admin-panel");
   const { user, isLoaded } = useAuth();
   const { logOut } = useAuthActions();
   const [anchorElementNav, setAnchorElementNav] = useState<null | HTMLElement>(
@@ -48,7 +51,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ display: isAdminRoute ? "none" : "block" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
