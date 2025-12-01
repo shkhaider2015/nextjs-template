@@ -107,20 +107,6 @@ function ResponsiveAppBar() {
                 </Typography>
               </MenuItem>
 
-              {!!user?.role &&
-                [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && [
-                  <MenuItem
-                    key="users"
-                    onClick={handleCloseNavMenu}
-                    component={Link}
-                    href="/admin-panel/users"
-                  >
-                    <Typography textAlign="center">
-                      {t("common:navigation.users")}
-                    </Typography>
-                  </MenuItem>,
-                  // mobile-menu-items
-                ]}
               {isLoaded &&
                 !user && [
                   <Divider key="divider" />,
@@ -176,21 +162,6 @@ function ResponsiveAppBar() {
             >
               {t("common:navigation.home")}
             </Button>
-
-            {!!user?.role &&
-              [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && (
-                <>
-                  <Button
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
-                    component={Link}
-                    href="/admin-panel/users"
-                  >
-                    {t("common:navigation.users")}
-                  </Button>
-                  {/* desktop-menu-items */}
-                </>
-              )}
           </Box>
 
           <Box
