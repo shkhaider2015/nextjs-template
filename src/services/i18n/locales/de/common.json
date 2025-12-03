@@ -1,0 +1,40 @@
+{
+  "app-name": "APP",
+  "loading": "Wird geladen ...",
+  "navigation": {
+    "home": "Startseite",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "profile": "Profil",
+    "users": "Benutzer",
+    "logout": "Abmelden"
+  },
+  "formInputs": {
+    "avatarInput": {
+      "dropzoneText": "Bild hier ablegen ...",
+      "dragAndDrop": "Oder ziehen Sie ein Bild hierher",
+      "selectFile": "Bild auswählen"
+    },
+    "multipleImageInput": {
+      "dropzoneText": "Bilder hier ablegen ...",
+      "dragAndDrop": "Oder ziehen Sie einige Bilder hierher",
+      "selectFile": "Bilder auswählen"
+    },
+    "singleImageInput": {
+      "dropzoneText": "Bild hier ablegen ...",
+      "dragAndDrop": "Oder ziehen Sie ein Bild hierher",
+      "selectFile": "Bild auswählen"
+    }
+  },
+  "leavePage": {
+    "title": "Seite verlassen?",
+    "message": "Änderungen, die Sie vorgenommen haben, werden möglicherweise nicht gespeichert",
+    "stay": "Auf Seite bleiben",
+    "leave": "Seite verlassen"
+  },
+  "auth": {
+    "facebook": {
+      "action": "Mit Facebook anmelden"
+    }
+  }
+}

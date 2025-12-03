@@ -16,6 +16,8 @@ import SafetyCheck from "@mui/icons-material/SafetyCheck";
 import GroupIcon from "@mui/icons-material/Group";
 import Toolbar from "@mui/material/Toolbar";
 import AdminAppBar from "../admin-app-bar/admin-app-bar";
+import useLanguage from "@/services/i18n/use-language";
+import { dir } from "i18next";
 import type { SvgIconProps } from "@mui/material/SvgIcon";
 import type { ComponentType } from "react";
 
@@ -53,8 +55,10 @@ const adminRoutes2: {
 ];
 
 export default function ResponsiveDrawer(props: Props) {
+  const language = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const anchor = dir(language) === "rtl" ? "right" : "left";
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -116,6 +120,7 @@ export default function ResponsiveDrawer(props: Props) {
       >
         {/* Drawer For Mobile App */}
         <Drawer
+          anchor={anchor}
           variant="temporary"
           open={mobileOpen}
           onTransitionEnd={handleDrawerTransitionEnd}
@@ -137,6 +142,7 @@ export default function ResponsiveDrawer(props: Props) {
         </Drawer>
         {/* Drawer For Desktop */}
         <Drawer
+          anchor={anchor}
           variant="permanent"
           sx={{
             display: { xs: "none", sm: "block" },
@@ -156,6 +162,9 @@ export default function ResponsiveDrawer(props: Props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ...(anchor === "left"
+            ? { ml: { sm: `${drawerWidth}px` } }
+            : { mr: { sm: `${drawerWidth}px` } }),
         }}
       >
         <Toolbar />

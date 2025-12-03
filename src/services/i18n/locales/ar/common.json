@@ -1,0 +1,40 @@
+{
+  "app-name": "تطبيق",
+  "loading": "جار التحميل ...",
+  "navigation": {
+    "home": "الصفحة الرئيسية",
+    "signIn": "تسجيل الدخول",
+    "signUp": "التسجيل",
+    "profile": "الملف الشخصي",
+    "users": "المستخدمون",
+    "logout": "تسجيل الخروج"
+  },
+  "formInputs": {
+    "avatarInput": {
+      "dropzoneText": "أسقط الصورة هنا ...",
+      "dragAndDrop": "أو اسحب وأفلت بعض الصور هنا",
+      "selectFile": "حدد صورة"
+    },
+    "multipleImageInput": {
+      "dropzoneText": "أسقط الصورة هنا ...",
+      "dragAndDrop": "أو اسحب وأفلت بعض الصور هنا",
+      "selectFile": "حدد صورة"
+    },
+    "singleImageInput": {
+      "dropzoneText": "أسقط الصورة هنا ...",
+      "dragAndDrop": "أو اسحب وأفلت بعض الصور هنا",
+      "selectFile": "حدد صورة"
+    }
+  },
+  "leavePage": {
+    "title": "هل تريد مغادرة هذه الصفحة؟",
+    "message": "قد لا يتم حفظ التغييرات التي أجريتها",
+    "stay": "البقاء في الصفحة",
+    "leave": "مغادرة الصفحة"
+  },
+  "auth": {
+    "facebook": {
+      "action": "تسجيل الدخول باستخدام الفيسبوك"
+    }
+  }
+}

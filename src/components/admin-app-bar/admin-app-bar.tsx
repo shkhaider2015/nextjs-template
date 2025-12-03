@@ -18,10 +18,14 @@ import { useTranslation } from "@/services/i18n/client";
 import Link from "@/components/link";
 import ThemeSwitchButton from "@/components/switch-theme-button";
 import { IS_SIGN_UP_ENABLED } from "@/services/auth/config";
+import useLanguage from "@/services/i18n/use-language";
+import { dir } from "i18next";
 
 const AdminAppBar = (props: AdminAppBarProps) => {
   const { handleDrawerToggle, drawerWidth } = props;
   const { t } = useTranslation("common");
+  const language = useLanguage();
+  const anchor = dir(language) === "rtl" ? "right" : "left";
   const { user, isLoaded } = useAuth();
   const { logOut } = useAuthActions();
   const [anchorElementNav, setAnchorElementNav] = useState<null | HTMLElement>(
@@ -50,12 +54,19 @@ const AdminAppBar = (props: AdminAppBarProps) => {
       position="fixed"
       sx={{
         width: { sm: `calc(100% - ${drawerWidth}px)`, md: `100%` },
-        ml: { sm: `${drawerWidth}px` },
-        pl: { md: `${drawerWidth}px` },
+        ...(anchor === "left"
+          ? {
+              pl: { md: `${drawerWidth}px` },
+              pr: { md: 10 },
+            }
+          : {
+              pr: { md: `${drawerWidth}px` },
+              pl: { md: 10 },
+            }),
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >
-      <Toolbar>
+      <Toolbar disableGutters>
         <IconButton
           color="inherit"
           aria-label="open drawer"
